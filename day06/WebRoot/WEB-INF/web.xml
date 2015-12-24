@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<context-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>ServletDemo1</servlet-name>
+		<servlet-class>com.remix.servlet.ServletDemo1</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo2</servlet-name>
+		<servlet-class>com.remix.servlet.ServletDemo2</servlet-class>
+		<init-param>
+			<param-name>aaa</param-name>
+			<param-value>bbb</param-value>
+		</init-param>
+		<init-param>
+			<param-name>xxx</param-name>
+			<param-value>yyy</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo3</servlet-name>
+		<servlet-class>com.remix.servlet.ServletDemo3</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo4</servlet-name>
+		<servlet-class>com.remix.servlet.ServletDemo4</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo5</servlet-name>
+		<servlet-class>com.remix.servlet.ServletDemo5</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo6</servlet-name>
+		<servlet-class>com.remix.servlet.ServletDemo6</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo7</servlet-name>
+		<servlet-class>com.remix.servlet.ServletDemo7</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>ResponseDemo1</servlet-name>
+    <servlet-class>com.remix.response.ResponseDemo1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ResponseDemo2</servlet-name>
+    <servlet-class>com.remix.response.ResponseDemo2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ResponseDemo3</servlet-name>
+    <servlet-class>com.remix.response.ResponseDemo3</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ResponseDemo4</servlet-name>
+    <servlet-class>com.remix.response.ResponseDemo4</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ResponseDemo5</servlet-name>
+    <servlet-class>com.remix.response.ResponseDemo5</servlet-class>
+  </servlet>
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>ServletDemo1</servlet-name>
+		<url-pattern>/servlet/ServletDemo1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo2</servlet-name>
+		<url-pattern>/servlet/ServletDemo2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo3</servlet-name>
+		<url-pattern>/servlet/ServletDemo3</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo4</servlet-name>
+		<url-pattern>/servlet/ServletDemo4</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo5</servlet-name>
+		<url-pattern>/servlet/ServletDemo5</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo6</servlet-name>
+		<url-pattern>/servlet/ServletDemo6</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo7</servlet-name>
+		<url-pattern>/servlet/ServletDemo7</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResponseDemo1</servlet-name>
+    <url-pattern>/servlet/ResponseDemo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResponseDemo2</servlet-name>
+    <url-pattern>/servlet/ResponseDemo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResponseDemo3</servlet-name>
+    <url-pattern>/servlet/ResponseDemo3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResponseDemo4</servlet-name>
+    <url-pattern>/servlet/ResponseDemo4</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResponseDemo5</servlet-name>
+    <url-pattern>/servlet/ResponseDemo5</url-pattern>
+  </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>

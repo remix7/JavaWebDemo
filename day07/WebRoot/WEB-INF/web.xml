@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>RequestDemo1</servlet-name>
+    <servlet-class>com.remix.request.RequestDemo1</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RequestDemo2</servlet-name>
+    <servlet-class>com.remix.request.RequestDemo2</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RequestDemo3</servlet-name>
+    <servlet-class>com.remix.request.RequestDemo3</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RequestDemo4</servlet-name>
+    <servlet-class>com.remix.request.RequestDemo4</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RequestDemo5</servlet-name>
+    <servlet-class>com.remix.request.RequestDemo5</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RequestDemo6</servlet-name>
+    <servlet-class>com.remix.request.RequestDemo6</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RequestDemo7</servlet-name>
+    <servlet-class>com.remix.request.RequestDemo7</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CookieDemo1</servlet-name>
+    <servlet-class>com.remix.cookie.CookieDemo1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CookieDemo2</servlet-name>
+    <servlet-class>com.remix.cookie.CookieDemo2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.remix.app.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <servlet-class>com.remix.app.LoginUIServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+  <servlet-mapping>
+    <servlet-name>RequestDemo1</servlet-name>
+    <url-pattern>/servlet/RequestDemo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestDemo2</servlet-name>
+    <url-pattern>/servlet/RequestDemo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestDemo3</servlet-name>
+    <url-pattern>/servlet/RequestDemo3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestDemo4</servlet-name>
+    <url-pattern>/servlet/RequestDemo4</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestDemo5</servlet-name>
+    <url-pattern>/servlet/RequestDemo5</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestDemo6</servlet-name>
+    <url-pattern>/servlet/RequestDemo6</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestDemo7</servlet-name>
+    <url-pattern>/servlet/RequestDemo7</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CookieDemo1</servlet-name>
+    <url-pattern>/servlet/CookieDemo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CookieDemo2</servlet-name>
+    <url-pattern>/servlet/CookieDemo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <url-pattern>/servlet/LoginUIServlet</url-pattern>
+  </servlet-mapping>
+
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
