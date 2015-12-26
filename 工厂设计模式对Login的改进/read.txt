@@ -1,0 +1,5 @@
+对login项目进行的更新
+添加Statement使用mysql数据库记录数据
+添加PreparedStatement使用mysql数据库记录数据
+添加使用properties配置文件降低Service的耦合性
+----
