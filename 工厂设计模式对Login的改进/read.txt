@@ -2,4 +2,9 @@
 添加Statement使用mysql数据库记录数据
 添加PreparedStatement使用mysql数据库记录数据
 添加使用properties配置文件降低Service的耦合性
+修改使用的数据存放模式  只需要修改dao.properties  中userDao=的值即可
+这里有三个选项
+userDao=com.remix.dao.impl.UserDaoMySQLImol1
+userDao=com.remix.dao.impl.UserDaoMySQLImpl
+userDao=com.remix.dao.impl.UserDaoImpl
 ----
