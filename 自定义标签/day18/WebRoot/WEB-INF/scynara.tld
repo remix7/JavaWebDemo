@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<tlib-version>1.0</tlib-version>
+	<short-name>scynara</short-name>
+	<uri>http://www.cynara.cc/jsp/jstl/simpletag</uri>
+	<tag><!-- 描述标签 -->
+		<name>showLocalAddr</name>
+		<tag-class>cc.cynara.simple.tag.ShowLocalAddrSimpleTag</tag-class>
+		<body-content>empty</body-content><!-- 指定标签的主体内容，没有就写empty -->
+	</tag>
+	<tag><!-- 描述标签 -->
+		<name>demo2</name>
+		<tag-class>cc.cynara.simple.tag.Demo2SimpleTag</tag-class>
+		<body-content>scriptless</body-content><!-- 指定标签的主体内容，没有就写empty -->
+	</tag>
+	<tag><!-- 描述标签 -->
+		<name>demo3</name>
+		<tag-class>cc.cynara.simple.tag.Demo3SimpleTag</tag-class>
+		<body-content>empty</body-content><!-- 指定标签的主体内容，没有就写empty -->
+	</tag>
+	<tag><!-- 描述标签 -->
+		<name>demo4</name>
+		<tag-class>cc.cynara.simple.tag.Demo4SimpleTag</tag-class>
+		<body-content>scriptless</body-content><!-- 指定标签的主体内容，没有就写empty -->
+		<attribute>
+			<name>count</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>Demo5</name>
+		<tag-class>cc.cynara.simple.tag.Demo5SimpleTag</tag-class>
+		<body-content>scriptless</body-content><!-- 指定标签的主体内容，没有就写empty -->
+	</tag>
+</taglib>
+    

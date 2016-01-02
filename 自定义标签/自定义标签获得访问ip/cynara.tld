@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<tlib-version>1.0</tlib-version>
+	<short-name>cynara</short-name>
+	<uri>http://www.cynara.cc/jsp/jstl</uri>
+	<tag>
+		<description>Show Local Addr</description>
+		<name>showLocalAddr</name>
+		<tag-class>cc.cynara.tag.ShwoLocalAddrTag</tag-class>
+		<body-content>empty</body-content><!-- 指定标签的主体内容，没有就写empty -->
+	</tag>
+</taglib>
+    
