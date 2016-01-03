@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ServletDemo1</servlet-name>
+		<servlet-class>cc.cynara.servlet.ServletDemo1</servlet-class>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AutoLoginServlet</servlet-name>
+    <servlet-class>cc.cynara.servlet.AutoLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LogOutServlet</servlet-name>
+    <servlet-class>cc.cynara.servlet.LogOutServlet</servlet-class>
+  </servlet>
+
+
+	<filter>
+		<filter-name>NoCachrFilter</filter-name>
+		<filter-class>cc.cynara.filter.NoCacheFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>NoCachrFilter</filter-name>
+		<url-pattern>*.jps</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>NoCachrFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>CharSetFilter</filter-name>
+		<filter-class>cc.cynara.filter.CharSetFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharSetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>AutoLoginFilter</filter-name>
+		<filter-class>cc.cynara.autologin.AutoLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>AutoLoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>ServletDemo1</servlet-name>
+		<url-pattern>/servlet/ServletDemo1</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AutoLoginServlet</servlet-name>
+    <url-pattern>/servlet/AutoLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogOutServlet</servlet-name>
+    <url-pattern>/servlet/LogOutServlet</url-pattern>
+  </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
