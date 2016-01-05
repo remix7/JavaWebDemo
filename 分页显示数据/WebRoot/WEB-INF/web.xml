@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShowAllCustomerServlet</servlet-name>
+    <servlet-class>com.remix.web.controller.ShowAllCustomerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddCustomerServlet</servlet-name>
+    <servlet-class>com.remix.web.controller.AddCustomerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateCustomerServletUI</servlet-name>
+    <servlet-class>com.remix.web.controller.UpdateCustomerServletUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateCustomerServlet</servlet-name>
+    <servlet-class>com.remix.web.controller.UpdateCustomerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelOneCustomerServlet</servlet-name>
+    <servlet-class>com.remix.web.controller.DelOneCustomerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelMormCustomerServlet</servlet-name>
+    <servlet-class>com.remix.web.controller.DelMormCustomerServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>ShowAllCustomerServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCustomerServlet</servlet-name>
+    <url-pattern>/servlet/AddCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCustomerServletUI</servlet-name>
+    <url-pattern>/servlet/UpdateCustomerServletUI</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCustomerServlet</servlet-name>
+    <url-pattern>/servlet/UpdateCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelOneCustomerServlet</servlet-name>
+    <url-pattern>/servlet/DelOneCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelMormCustomerServlet</servlet-name>
+    <url-pattern>/servlet/DelMormCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>servlet/ShowAllCustomerServlet</welcome-file>
+  </welcome-file-list>
+</web-app>
