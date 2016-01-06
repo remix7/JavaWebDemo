@@ -1,0 +1,42 @@
+package cc.cynara.servlet;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.zip.GZIPOutputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class ServletDemo3 extends HttpServlet {
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String data = "abcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaaabcdaaaaaaaaaaaaaaa";
+		//找一个内存缓存字节流
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		//把数据压缩到缓存流中
+		GZIPOutputStream gos = new GZIPOutputStream(baos);
+		//取出数据 压缩后的
+		byte[] b = data.getBytes();
+		gos.write(b);
+		gos.close();
+		//取出压缩后的数据
+		b = baos.toByteArray();
+		//输出前告诉浏览器压缩方式
+		response.setHeader("Content-Encoding", "gzip");
+		response.setContentLength(b.length);
+		//用服务器的响应对象输出
+		ServletOutputStream sos = response.getOutputStream();
+		sos.write(b);
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		doGet(request, response);
+	}
+
+}
