@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>uploadFileServlet1</servlet-name>
+    <servlet-class>cc.cynara.upload.uploadFileServlet1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>uploadFileServlet2</servlet-name>
+    <servlet-class>cc.cynara.upload.uploadFileServlet2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>uploadFileServlet3</servlet-name>
+    <servlet-class>cc.cynara.upload.uploadFileServlet3</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>uploadFileServlet4</servlet-name>
+    <servlet-class>cc.cynara.upload.uploadFileServlet4</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowAllFileServlet</servlet-name>
+    <servlet-class>cc.cynara.web.controller.ShowAllFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DownServlet</servlet-name>
+    <servlet-class>cc.cynara.web.controller.DownServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>uploadFileServlet1</servlet-name>
+    <url-pattern>/servlet/uploadFileServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>uploadFileServlet2</servlet-name>
+    <url-pattern>/servlet/uploadFileServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>uploadFileServlet3</servlet-name>
+    <url-pattern>/servlet/uploadFileServlet3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>uploadFileServlet4</servlet-name>
+    <url-pattern>/servlet/uploadFileServlet4</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowAllFileServlet</servlet-name>
+    <url-pattern>/servlet/ShowAllFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownServlet</servlet-name>
+    <url-pattern>/servlet/DownServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
