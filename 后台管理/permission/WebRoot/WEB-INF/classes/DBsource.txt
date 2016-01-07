@@ -1,0 +1,36 @@
+create database permission;
+ use permission;
+ create table menu(
+ 	id varchar(100) primary key,
+ 	name varchar(100) unique,
+ 	uri varchar(100),
+ 	description varchar(255)
+ );
+ create table role(
+ 	id varchar(100) primary key,
+ 	name varchar(100) unique,
+ 	description varchar(255)
+ );
+ create table user(
+	id varchar(100) primary key,
+	username varchar(100) unique not null,
+	password varchar(100),
+	nick varchar(100)
+);
+create table menu_role(
+	m_id varchar(100),
+	r_id varchar(100),
+	primary key(m_id,r_id),
+	constraint m_id_fk foreign key(m_id) references menu(id),
+	constraint r_id_fk_1 foreign key(r_id) references role(id)
+);
+create table role_user(
+	r_id varchar(100),
+	u_id varchar(100),
+	primary key(u_id,r_id),
+	constraint u_id_fk foreign key(u_id) references user(id),
+	constraint r_id_fk_2 foreign key(r_id) references role(id)
+);
+
+
+
