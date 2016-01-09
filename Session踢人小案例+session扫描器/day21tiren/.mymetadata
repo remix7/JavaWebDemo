@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="day21tiren"
+  id="myeclipse.1452324102544"
+  context-root="/day21tiren"
+  j2ee-spec="5.0"
+  archive="day21tiren.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
