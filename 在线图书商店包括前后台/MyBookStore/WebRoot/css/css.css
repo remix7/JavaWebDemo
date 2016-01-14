@@ -1,0 +1,16 @@
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "PT Sans", sans-serif;
+  color: #83b0b9;
+  background-color: #343943;
+}
+
+a {
+  color: #d35657;
+  text-decoration: none;
+}
