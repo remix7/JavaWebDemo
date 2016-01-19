@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <title>ddd</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script language="JavaScript" src="../JS/jquery-1.4.2.min.js"></script>
+</head
+<body>
+	<form>
+		<input type="checkbox" name="hobby" value="篮球"/>篮球
+		<input type="checkbox" name="hobby" value="足球"/>足球
+		<input type="checkbox" name="hobby" value="排球"/>排球
+		<input type="checkbox" name="hobby" value="乒乓球"/>乒乓球
+		<input type="button" name="b1" id="b1" value="选中的个数"/>
+		
+	</form>
+	<script type="text/javascript">
+$().ready(function(){
+//<input type="button" name="b1" id="b1" value="选中的个数"/>
+	$("#b1").click(function(){
+		alert($("input:checked").length);
+	});
+});
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../JS/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+	<input type="text" id="in" value="liutao1251"/>
+	<script type="text/javascript">
+		var $in = $("#in");
+//		alert($in.val())
+
+		//转换为dom对象  1  jqurey其实是个数字对象 通过角标来获取
+//		var domIno= $in[0];
+//		alert(domIno.value)
+		//转换为dom对象 2 
+		var domIno = $in.get(0);
+		alert(domIno.value);
+	</script>
+</body>
+</html>

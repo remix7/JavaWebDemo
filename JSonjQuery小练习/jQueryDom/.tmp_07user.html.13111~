@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script language="JavaScript" src="../JS/jquery-1.4.2.min.js"></script>
+		<title>添加用户</title>
+	</head>
+	<body>
+		<center>
+			<br><br>
+			添加用户:<br><br>
+			姓名: <input type="text" name="name" id="name" />&nbsp;&nbsp;
+			email: <input type="text" name="email" id="email" />&nbsp;&nbsp;
+			电话: <input type="text" name="tel" id="tel" /><br><br>
+			<button id="addUser">提交</button>
+			<br><br>
+			<hr>
+			<br><br>
+			<table id="usertable" border="1" cellpadding="5" cellspacing=0>
+				<tbody>	
+					<tr>
+						<th>姓名</th>
+						<th>email</th>
+						<th>电话</th>
+						<th>&nbsp;</th>
+					</tr>
+					<tr>
+						<td>Tom</td>
+						<td>tom@tom.com</td>
+						<td>5000</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+					<tr>
+						<td>Jerry</td>
+						<td>jerry@sohu.com</td>
+						<td>8000</td>
+						<td><a href="#">Delete</a></td>
+					</tr>
+				</tbody>	
+			</table>
+		</center>
+	</body>
+	<script language="JavaScript">
+		$().ready(function(){
+			$("#addUser").click(function(){
+				//取出三个值
+				/*
+				姓名: <input type="text" name="name" id="name" />&nbsp;&nbsp;
+				email: <input type="text" name="email" id="email" />&nbsp;&nbsp;
+				电话: <input type="text" name="tel" id="tel" /><br><br>
+				*/
+				var $name = $("#name").attr("value");
+				var $email = $("#email").attr("value");
+				var $tel = $("#tel").attr("value");
+				//创建tr元素
+				var $tr = $("<tr></tr>");
+				//依次创建4个td并设置属性
+				/*
+				<tr>
+				<td>Jerry</td>
+				<td>jerry@sohu.com</td>
+				<td>8000</td>
+				<td><a href="deleteEmp?id=Jerry">Delete</a></td>
+				</tr>
+				*/
+				var $td1 = $("<td></td>").text($name);
+				var $td2 = $("<td></td>").text($email);
+				var $td3 = $("<td></td>").text($tel);
+				var $td4 = $("<td></td>");
+				var $a = $("<a></>").text("del");
+				$a.appendTo($td4);
+				$a.click(function(){
+					$(this).parent().parent().empty();
+				});
+				
+				
+				//挂接
+				$tr.append($td1);
+				$tr.append($td2);
+				$tr.append($td3);
+				$tr.append($td4);
+				
+				$tr.appendTo($("#usertable tbody"));
+			});
+		});
+			
+	</script>
+</html>

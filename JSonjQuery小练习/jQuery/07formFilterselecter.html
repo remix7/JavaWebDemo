@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>ddd</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script language="JavaScript" src="../JS/jquery-1.4.2.min.js"></script>
+	<style type="text/css">
+		 	div,span{
+			    width: 140px;
+			    height: 140px;
+			    margin: 20px;
+			    background: #9999CC;
+			    border: #000 1px solid;
+				float:left;
+			    font-size: 17px;
+			    font-family:Roman;
+			}
+			div.mini{
+			    width: 30px;
+			    height: 30px;
+			    background: #CC66FF;
+			    border: #000 1px solid;
+			    font-size: 12px;
+			    font-family:Roman;
+			}
+	 </style>
+	 
+	 <!--引入jquery的js库-->
+	</head>
+	<body>
+	<p>段落1</p>
+	<p>段落2</p>
+	<p>段落3</p>
+	<table border=1>
+		<tr>
+			<td>第1行</td><td>第1行</td>
+		</tr>
+		<tr>
+			<td>第2行</td><td>第2行</td>
+		</tr>
+		<tr>
+			<td>第3行</td><td>第3行</td>
+		</tr>
+		<tr>
+			<td>第4行</td><td>第4行</td>
+		</tr>
+		<tr>
+			<td>第5行</td><td>第5行</td>
+		</tr>
+		
+		<tr>
+			<td>第6行</td><td>第6行</td>
+		</tr>
+	</table>
+	<br><br><br>
+	<table border=1>
+		<tr>
+			<td>第1行</td><td>第1行</td>
+		</tr>
+		<tr>
+			<td>第2行</td><td>第2行</td>
+		</tr>
+		<tr>
+			<td>第3行</td><td>第3行</td>
+		</tr>
+		<tr>
+			<td>第4行</td><td>第4行</td>
+		</tr>
+		<tr>
+			<td>第5行</td><td>第5行</td>
+		</tr>
+		<tr>
+			<td>第6行</td><td>第6行</td>
+		</tr>
+	</table>		
+	</body>
+    <script language="JavaScript">
+    	//给网页中所有的 <p> 元素添加 onclick 事件,打印其文本值 html()/text()
+			$("p").each(function(){
+				$(this).click(function(){
+					alert($(this).html());
+				});
+			});	
+		//使一个特定的表格隔行变色:第一张表奇数行变为红色；第二张表偶数行变为红色
+			//第一张表奇数行变为红色
+			$("table:eq(0) tr:even").css("background-color","red");
+			$("table:eq(1) tr:odd").css("background-color","red");
+    </script>
+   
+</html>
+
+
+

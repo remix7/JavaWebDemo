@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>test01.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  </head>
+  <body>
+     <select id="province" name="province">
+       <option value="">请选择....</option>
+	   <option value="吉林省">吉林省</option>
+	   <option value="辽宁省">辽宁省</option>
+	   <option value="山东省">山东省</option>
+     </select>
+	 <select id="city" name="city">
+	 	<option value="">请选择.....</option>
+	 </select>
+	 <script type="text/javascript">
+//	 	得到province的变化事件
+		document.getElementById("province").onchange=function(){
+			//这是清空city的代码
+			var cityEle = document.getElementById("city");
+			var cityProEle = cityEle.getElementsByTagName("option");
+			for(var i=cityProEle.length-1;i>0;i--){
+				cityEle.removeChild(cityProEle[i]);
+			}
+			//		得到代表xml文档的对象
+			var xmlDoc = parseXML();
+			//得到select被选中的值
+			var selectProvince = this.value;
+			//		遍历xml文档中的province元素判断name的属性是否等于当前select的值
+			var xmlProcince;
+			var xmlProvinceEles = xmlDoc.getElementsByTagName("province");
+			for(var i=0;i<xmlProvinceEles.length;i++){
+					if(xmlProvinceEles[i].getAttribute("name")==selectProvince){
+						xmlProcince=xmlProvinceEles[i];
+						break;
+					}
+				}
+				if(xmlProcince!=null){
+					var xmlCity = xmlProcince.getElementsByTagName("city");
+					for (var i = 0; i < xmlCity.length; i++) {
+						xmlCity[i].firstChild.nodeValue
+						//		创建option元素
+						var optionEle = document.createElement("option");
+						//		设置其属性和文本
+						optionEle.setAttribute("value",xmlCity[i].firstChild.nodeValue);
+						var textNode = document.createTextNode(xmlCity[i].firstChild.nodeValue);
+						optionEle.appendChild(textNode);
+						//		将option挂接到city的select元素上
+						cityEle.appendChild(optionEle);
+					}
+				}
+			}
+		//解析xml文档
+		function parseXML(){
+			try //Internet Explorer
+			{
+				xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+			} 
+			catch (e) {
+				try //Firefox, Mozilla, Opera, etc.
+				{
+					xmlDoc = document.implementation.createDocument("", "", null);
+				} 
+				catch (e) {
+					alert(e.message);
+					return;
+				}
+			}
+			xmlDoc.async = false;
+			xmlDoc.load("cities.xml");
+			return xmlDoc;
+		}
+	 </script>
+  </body>
+</html>
+------------------xml
+<?xml version="1.0" encoding="GB2312"?>
+<china>
+	<province name="吉林省">
+		<city>长春</city>
+		<city>吉林市</city>
+		<city>四平</city>
+		<city>松原</city>
+		<city>通化</city>
+	</province>
+	<province name="辽宁省">
+		<city>沈阳</city>
+		<city>大连</city>
+		<city>鞍山</city>
+		<city>抚顺</city>
+		<city>铁岭</city>
+	</province>
+	<province name="山东省">
+		<city>济南</city>
+		<city>青岛</city>
+		<city>威海</city>
+		<city>烟台</city>
+		<city>潍坊</city>
+	</province>
+</china>	

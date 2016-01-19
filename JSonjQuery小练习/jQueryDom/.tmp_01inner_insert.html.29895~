@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title>ddd</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script language="JavaScript" src="../JS/jquery-1.4.2.min.js">
+        </script>
+        <style type="text/css">
+            div, span {
+                width: 140px;
+                height: 140px;
+                margin: 20px;
+                background: #9999CC;
+                border: #000 1px solid;
+                float: left;
+                font-size: 17px;
+                font-family: Roman;
+            }
+            
+            div.mini {
+                width: 30px;
+                height: 30px;
+                background: #CC66FF;
+                border: #000 1px solid;
+                font-size: 12px;
+                font-family: Roman;
+            }
+            
+            div.visible {
+                display: none;
+            }
+        </style>
+        <!--引入jquery的js库-->
+    </head>
+    <body>
+        <ul id="city">
+            <li id="bj" name="beijing">
+                北京
+            </li>
+            <li id="tj" name="tianjin">
+                天津
+            </li>
+            <li id="cq" name="chongqing">
+                重庆
+            </li>
+        </ul>
+        <ul id="love">
+            <li id="fk" name="fankong">
+                反恐
+            </li>
+            <li id="xj" name="xingji">
+                星际
+            </li>
+        </ul>
+        <div id="foo1">
+            Hello1
+        </div>
+    </body>
+    <script language="JavaScript">
+        $().ready(function(){
+            //在id=city的ul最后加上id="fk"反恐
+            //		 $("#city").append($("#fk"));
+            //		 $("#fk").appendTo($("#city"));
+            //在id=city的ul最前面加上id="xj"星际
+            //		 $("#city").prepend($("#fk"));
+            $("#fk").prependTo($("#city"));
+        });
+    </script>
+</html>
