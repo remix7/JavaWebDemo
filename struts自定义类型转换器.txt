@@ -1,0 +1,81 @@
+一、自定义类型转换器
+	1、编写一个类，继承com.opensymphony.xwork2.conversion.impl.DefaultTypeConverter
+	2、覆盖掉其中的public Object convertValue(Map<String, Object> context, Object value,Class toType)
+			context:OGNL表达式的上下文
+			value:实际的值。用户输入的都是字符串，但他是一个String数组。
+			toType：目标类型
+	public class DateConvertor extends DefaultTypeConverter {
+		/*
+		 context:ognl表达式的上下文
+		 value：用户输入的值（ 保存数据时）或者模型中的属性。用户输入的值是String数组
+		 toType:目标类型
+		 */
+		@Override
+		public Object convertValue(Map<String, Object> context, Object value,
+				Class toType) {
+			DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+			if(toType==Date.class){
+				//2013/05/31----->java.util.Date 保存数据时
+				String strValue = ((String[])value)[0];
+				try {
+					return df.parse(strValue);
+				} catch (ParseException e) {
+					throw new RuntimeException(e);
+				}
+			}else{
+				//java.util.Date----->2013/05/31 获取数据时
+				Date dValue = (Date)value;
+				return df.format(dValue);
+			}
+		}
+	}
+	3、注册类型转换器
+		3.1局部类型转换器：只对当前的Action有效
+		具体做法：在动作类相同的包中，建立一个名称是“动作类名-conversion.properties”的配置文件，
+			文件中增加以下内容：要验证的字段=验证器的类全名
+					birthday=cn.itcast.convertor.DateConvertor
+		3.2全局类型转换器：对所有的Action都有效
+		具体做法：在WEB-INF/classes目录下，建立一个名称为"xwork-conversion.properties"的配置文件，
+			文件中增加以下内容：目标类型全名=验证器的类全名
+					java.util.Date=cn.itcast.convertor.DateConvertor
+		
+		
+		
+	注意：如果转换失败，Struts2框架会寻找name=input的结果页面
+二、自定义拦截器
+	1、编写一个类，实现com.opensymphony.xwork2.interceptor.Interceptor
+	2、主要实现public String intercept(ActionInvocation invocation) throws Exception{}方法
+		该方法的返回值就相当于动作的返回值
+		如果调用了String result = invocation.invoke();得到了动作类的返回的值。
+	public String intercept(ActionInvocation invocation) throws Exception {
+		//判断用户是否登录
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		Object obj = session.getAttribute("user");
+		if(obj==null){
+			return "login";
+		}else{
+			return invocation.invoke();//调用动作方法
+		}
+	}
+	3、拦截器定义好后，一定要在配置文件中进行注册：
+		<interceptors> 只是定义拦截器，并没有起作用 
+			<interceptor name="permissionInterceptor" class="cn.itcast.interceptor.PermissionInterceptor"></interceptor>
+		</interceptors>
+	4、配置文件中的动作，要通过
+		<interceptor-ref name="permissionInterceptor"></interceptor-ref>使用该拦截器
+	注意：一旦动作中使用了自定义的拦截器，那么默认的就不起作用了。一般应该采用如下的做法：
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<interceptor-ref name="permissionInterceptor"></interceptor-ref>
+		
+	多个动作类都要使用的话，可以通过package来进行组合。
+三、用户输入数据的验证
+	1、手工编程验证，针对该动作类中的所有的动作方法
+	步骤：
+	a、动作类继承ActionSupport
+	b、覆盖调用public void validate()方法
+	c、在validate方法中，编写不符合要求的代码判断，并调用父类的addFieldError(String fieldName,String errorMessage)
+		如果fieldError（存放错误信息的Map）有任何的元素，就是验证不通过，动作方法不会执行。
+		Struts2框架会返回到name=input的result
+	d、在name=input指定的页面上使用struts2的标签显示错误信息。<s:fielderror/>
+	
+	

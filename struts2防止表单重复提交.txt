@@ -1,0 +1,10 @@
+一、防止表单的重复提交
+	1、在表单中加入<s:token/>标签
+	2、在动作类中加入token的拦截器
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<interceptor-ref name="token"></interceptor-ref>
+	3、增加一个名称为invalid.token的结果视图
+		<result name="invalid.token">/success.jsp</result>
+二、如何使用第三方的插件(jFreeChart插件)
+	
+三、CRUD
