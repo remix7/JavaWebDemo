@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<!-- 
+		类扫描的注解解析器
+			component 类
+			base-package 指定的包 以及子包中寻找
+			@Component  在要扫码的类上加
+			xmlns:context="http://www.springframework.org/schema/context"
+			http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            <context:component-scan base-package="要扫码的包名"></context:component-scan>
+	 -->
+	 
+	 <context:component-scan base-package="cc.cynara.spring.annotation.scan"></context:component-scan>
+</beans>

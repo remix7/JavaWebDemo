@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    <!-- 
+    	引入命名空间
+    	xmlns:aop="http://www.springframework.org/schema/aop"
+    	http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+     -->
+   <bean id="personDao" class="cc.cynara.spring.aop.PersonDaoImpl"></bean>
+   
+   <bean id="myTransaction" class="cc.cynara.spring.aop.MyTransaction"></bean>
+   
+   <!-- 
+   	aop配置
+    -->
+    <aop:config>
+    	<!-- 
+    		切入点表达式
+    	 -->
+    	<aop:pointcut expression="execution(* cc.cynara.spring.aop.PersonDaoImpl.*(..))" id="preform"/>
+    	<!-- 
+    		切面
+    	 -->
+    	<aop:aspect ref="myTransaction">
+    	<!-- 
+    		通知
+    	 -->
+    	 <!-- 
+    	 	前置通知
+    	  -->
+    	 <aop:before method="beginTransaction" pointcut-ref="preform"/>
+    	 <!-- 后置通知 -->
+    	 <aop:after-returning method="commit" pointcut-ref="preform" returning="var"/>
+    	 <!-- 最终通知 -->
+    	 <aop:after method="finallyMethod" pointcut-ref="preform"/>
+    	 <!-- 异常通知 -->
+    	 <aop:after-throwing method="throwMethod" pointcut-ref="preform" throwing="ex"/>
+    	 <!-- 环绕通知 -->
+    	 <aop:around method="arroundMethod" pointcut-ref="preform"/>
+    	</aop:aspect>
+    </aop:config>
+    
+</beans>

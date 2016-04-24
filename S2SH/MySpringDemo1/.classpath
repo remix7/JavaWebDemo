@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="springIOCDIExample"/>
+	<classpathentry kind="src" path="annotation"/>
+	<classpathentry kind="src" path="spring_extends"/>
+	<classpathentry kind="src" path="proxy"/>
+	<classpathentry kind="src" path="springAOP"/>
+	<classpathentry kind="src" path="mvc_exception"/>
+	<classpathentry kind="src" path="springAOP_annotation"/>
+	<classpathentry kind="src" path="spring_jdbc"/>
+	<classpathentry kind="src" path="spring_jdbc_tarnsaction"/>
+	<classpathentry kind="src" path="spring_hibernate"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Sun JDK 1.6.0_13"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/spring.jar" sourcepath="D:/开发包/jar/ssh/spring/spring2.5.5/spring-2.5.6-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/backport-util-concurrent.jar"/>
+	<classpathentry kind="lib" path="lib/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/ehcache-1.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="lib/javassist-3.9.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.10-bin.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12.jar"/>
+	<classpathentry kind="lib" path="lib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="lib/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="lib/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="lib/dbcp/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/dbcp/commons-dbutils-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/dbcp/commons-pool-1.5.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

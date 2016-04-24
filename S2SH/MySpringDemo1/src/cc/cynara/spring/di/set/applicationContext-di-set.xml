@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+   <!-- 
+   		把person 和student 放入spring容器中
+    --> 
+    <bean id="student_S" class="cc.cynara.spring.di.set.Student"></bean>
+    <bean id="person_S" class="cc.cynara.spring.di.set.Person">
+    	<!-- 
+    		property  就是用来描述属性 的
+    		基本类型的String等需要赋值的类型用value直接赋值
+    		引用类型的用ref
+    	 -->
+    	<property name="pid" value="1"></property>
+    	<property name="pname" value="liutao"></property>
+    	<property name="students">
+    		<ref bean="student_S"/>
+    	</property>
+    	<property name="lists"> <!-- list赋值 -->
+    		<list>
+    			<value>value1</value>
+    			<value>value2</value>
+    		</list>
+    	</property>
+    	
+    	<property name="sets"><!-- set赋值 -->
+    		<set>
+    			<value>set1</value>
+    			<ref bean="student_S"/>
+    		</set>
+    	</property>
+    	
+    	<property name="map"><!-- map赋值 -->
+    		<map>
+    			<entry key="m1">
+    				<value>map1</value>
+    			</entry>
+    			<entry key="m2">
+    				<ref bean="student_S"/>
+    			</entry>
+    		</map>
+    	</property>
+    	
+    	
+    </bean>
+    
+</beans>

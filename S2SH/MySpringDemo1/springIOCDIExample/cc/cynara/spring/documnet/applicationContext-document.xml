@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean id="documentManager" class="cc.cynara.spring.documnet.DocumentManager">
+    	<constructor-arg index="0" ref="pdfDocument"></constructor-arg>
+    </bean>       
+    
+    <bean id="wordDocument" class="cc.cynara.spring.documnet.WordDocument"></bean>
+    
+    <bean id="pdfDocument" class="cc.cynara.spring.documnet.PDFDocument"></bean>
+    
+    <bean id="excelDocuemnt" class="cc.cynara.spring.documnet.ExcelDocument"></bean>
+</beans>

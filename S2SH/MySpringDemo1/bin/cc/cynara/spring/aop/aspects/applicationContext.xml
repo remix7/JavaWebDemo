@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<bean id="salaryManager" class="cc.cynara.spring.aop.aspects.SalaryManagerImpl"></bean>
+	<bean id="logger" class="cc.cynara.spring.aop.aspects.Logger"></bean>
+	<bean id="privilege" class="cc.cynara.spring.aop.aspects.Privilege">
+		<property name="pri" value="admiaan"></property>
+	</bean>
+	<bean id="security" class="cc.cynara.spring.aop.aspects.Security"></bean>
+
+	<aop:config>
+		<aop:pointcut expression="execution(* cc.cynara.spring.aop.aspects.SalaryManagerImpl.*(..))" id="preform"/>
+		<aop:aspect ref="logger">
+			<aop:before method="logging" pointcut-ref="preform"/>
+		</aop:aspect>
+		<aop:aspect ref="security">
+			<aop:before method="security" pointcut-ref="preform"/>
+		</aop:aspect>
+		<aop:aspect ref="privilege">
+			<aop:around method="showPrivilege" pointcut-ref="preform"/>
+		</aop:aspect>
+	</aop:config>    
+</beans>

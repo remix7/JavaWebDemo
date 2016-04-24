@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 
+		用来描述一个持久化类
+		name 类名
+		table 可以不系  对用的表 不写就是类名
+		catalog 数据库名称
+	 -->
+	<class name="cc.cynara.s2sh.domain.Person">
+		<!-- 标识属性  和数据库的主键对应 
+			name 属性名称 
+			column 对应的列名
+		-->
+		<id name="pid" column="pid" length="5" type="java.lang.Long">
+			<!-- 主键的产生器  告诉hibernate以什么样的方式产生主键-->
+			<generator class="increment"></generator>
+		</id>
+		
+		<!-- 描述类的一般属性 -->
+		<property name="pname" column="pname" length="20" type="java.lang.String"></property>
+		<property name="psex" column="psex" length="2" type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+     
+     <!-- 
+     	 abstract="true"  告诉spring该类不能创建对象
+     	 parent="commonDao"   告诉spring 该类的父类是哪个
+     	 在spring中子类想要有父类的属性  必须要加parent才行
+      -->      
+    <bean id="commonDao" class="cc.cynara.spring.extend.CommonDao" abstract="true">
+    	<property name="s" value="你是猪吗"></property>
+    </bean>
+           
+    <bean id="personDao" class="cc.cynara.spring.extend.PersonDao" parent="commonDao"></bean>
+</beans>

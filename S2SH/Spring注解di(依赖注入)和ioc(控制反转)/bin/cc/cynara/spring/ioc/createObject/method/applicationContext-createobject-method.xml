@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+           
+    
+    <!-- 
+    	beans  把一个类放入到spring容器中  该类就是一个bean
+     -->
+     <!-- 
+     	id唯一标识符
+     	class 类的全名
+      -->
+     <bean id="helloWorld_C_M" class="cc.cynara.spring.ioc.createObject.method.HelloWorld"></bean>
+     
+     <!-- 
+     	factory-method 工厂方法
+      -->
+     <bean id="helloFactory" class="cc.cynara.spring.ioc.createObject.method.HelloWorldFactory" factory-method="getInstance"></bean>
+</beans>

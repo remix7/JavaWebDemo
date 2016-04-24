@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    
+   <import resource="cc/cynara/spring/ioc/createObject/applicationContext-createobject.xml"/>
+   
+   <import resource="cc/cynara/spring/ioc/alias/applicationContext-alias.xml"/>
+   
+   <import resource="cc/cynara/spring/ioc/createObject/method/applicationContext-createobject-method.xml"/>
+   
+   <import resource="cc/cynara/spring/ioc/createObject/when/applicationContext-createobject-when.xml"/>
+   
+   <import resource="cc/cynara/spring/scope/applicationContext-scope.xml"/>
+   
+   <import resource="cc/cynara/spring/initdestory/applicationContext-initdestory.xml"/>
+   
+   <import resource="cc/cynara/spring/di/set/applicationContext-di-set.xml"/>
+   
+   <import resource="cc/cynara/spring/di/constructor/applicationContext-di-constructor.xml"/>
+   
+   <import resource="cc/cynara/spring/documnet/applicationContext-document.xml"/>
+   
+   <import resource="cc/cynara/spring/mvc/applicationContext-mvc.xml"/>
+   
+   <import resource="cc/cynara/spring/annotation/di/applicationContext-annotation-di.xml"/>
+   
+   <import resource="cc/cynara/spring/annotation/scan/applicationContext-annotation-scan.xml"/>
+</beans>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx 
+		   http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+		   
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="locations">
+    		<value>classpath:jdbc.properties</value>
+    	</property>
+    </bean>
+    
+	 <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
+	 	<property name="driverClassName" value="${jdbc.driverClassName}"></property>
+	 	<property name="url" value="${jdbc.url}"></property>
+	 	<property name="username" value="${jdbc.username}"></property>
+	 	<property name="password" value="${jdbc.password}"></property>
+	 </bean>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+    	<property name="configLocation">
+    		<value>classpath:cc/cynara/spring/hibernate/transaction/config/hibernate.cfg.xml</value>
+    	</property>
+    </bean>
+    
+	<bean id="personDao" class="cc.cynara.spring.hibernate.transaction.dao.impl.PersonDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="personService" class="cc.cynara.spring.hibernate.transaction.service.impl.PersonServiceImpl">
+		<property name="personDao">
+			<ref bean="personDao"/>
+		</property>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<tx:advice id="tx" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" read-only="false"/>
+			<tx:method name="list*" read-only="false"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* cc.cynara.spring.hibernate.transaction.service.impl.PersonServiceImpl.*(..))" id="proform"/>
+		<aop:advisor advice-ref="tx" pointcut-ref="proform"/>
+	</aop:config>
+</beans>  

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    
+    <!-- 
+    	将类和切面放入到spring容器中管理  启动扫描机智
+     -->
+     <context:component-scan base-package="cc.cynara.spring.aop.annotation"></context:component-scan>
+     <!-- 
+     	启动AOP的注解解析器
+      -->
+      <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+</beans>

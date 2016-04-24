@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+           
+    
+    <!-- 
+    	beans  把一个类放入到spring容器中  该类就是一个bean
+     -->
+     <!-- 
+     	id唯一标识符
+     	class 类的全名
+      -->
+     <bean id="helloWorld" class="cc.cynara.spring.ioc.alias.HelloWorld"></bean>
+     <!-- 
+     	name 和bean的id对应
+      -->
+     <alias name="helloWorld" alias="tt"/>
+</beans>

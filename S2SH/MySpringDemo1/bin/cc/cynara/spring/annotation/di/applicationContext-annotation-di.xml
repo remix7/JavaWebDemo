@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<!-- 
+		A is annotation 注解  要导入注解解析器 以下四行  @Resource  @Autowired也可以 是按照类型去匹配
+		xmlns:context="http://www.springframework.org/schema/context"
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        <context:annotation-config></context:annotation-config>
+	 -->
+	<context:annotation-config></context:annotation-config>
+   <bean id="person_A" class="cc.cynara.spring.annotation.di.Person"></bean>
+
+	<bean id="student_A" class="cc.cynara.spring.annotation.di.Student"></bean>
+</beans>

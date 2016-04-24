@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    
+    <bean id="personDao" class="cc.cynara.spring.mvc.exception.dao.impl.PersonDaoImpl"></bean>
+    <bean id="personServive" class="cc.cynara.spring.mvc.exception.service.impl.PersonServiceImpl">
+    	<property name="personDao">
+    		<ref bean="personDao"/>
+    	</property>
+    </bean>
+    <bean id="personAction" class="cc.cynara.spring.mvc.exception.action.PersonAction">
+    	<property name="personService">
+    		<ref bean="personServive"/>
+    	</property>
+    </bean>
+    <!-- 切面类 -->
+    <bean id="myException" class="cc.cynara.spring.mvc.exception.aspect.MyException"></bean>
+    
+    <aop:config>
+    	<aop:pointcut expression="execution(* cc.cynara.spring.mvc.exception.service.impl.*.*(..))" id="preform"/>
+    	<aop:aspect ref="myException">
+    		<aop:after-throwing method="myException" pointcut-ref="preform" throwing="ex"/>
+    	</aop:aspect>
+    	
+    </aop:config>
+    
+</beans>

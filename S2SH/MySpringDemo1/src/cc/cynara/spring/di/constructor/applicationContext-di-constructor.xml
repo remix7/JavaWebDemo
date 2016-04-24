@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+     <!-- 
+     	利用构造方法给类中的属性赋值
+     	constructor-arg
+     		index 代表参数的位置 从0开始计
+     		type 参数的类型
+     		value 给基本类型赋值
+     		ref给引用类型赋值
+      -->
+   <bean id="person_C" class="cc.cynara.spring.di.constructor.Person">
+   		<constructor-arg index="0" type="java.lang.String" value="aaa" ></constructor-arg>
+   		<constructor-arg index="1" type="cc.cynara.spring.di.constructor.Student" ref="student_C"></constructor-arg>
+   </bean>
+   
+   <bean id="student_C" class="cc.cynara.spring.di.constructor.Student"></bean>
+</beans>
